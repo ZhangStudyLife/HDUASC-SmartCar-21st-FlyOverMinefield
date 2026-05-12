@@ -1,0 +1,8 @@
+[submodule "CYT4bb7_Car"]
+	path = CYT4bb7_Car
+	url = https://github.com/choumouing/CYT4bb7_Car.git
+	branch = 串口测试
+[submodule "CYT4BB7_Air"]
+	path = CYT4BB7_Air
+	url = https://github.com/ZhangStudyLife/CYT4BB7_Air.git
+	branch = 串口测试

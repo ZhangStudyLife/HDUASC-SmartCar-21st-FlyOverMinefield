@@ -1,0 +1,197 @@
+# ===================================================
+# 空地协同控制系统 - Git忽略配置文件
+# 适用于: CYT4BB7 (车端) / CYT2BL3 (飞机端)
+# IDE: IAR Embedded Workbench
+# ===================================================
+
+# ---------------------------------------------------
+# IAR Embedded Workbench 生成文件
+# ---------------------------------------------------
+
+# 调试输出目录
+**/Debug/
+**/Debug_*/
+**/Release/
+**/Release_*/
+
+# IAR设置和临时文件
+*.dep
+*.ewd
+*.ewt
+settings/
+
+# 编译中间文件
+*.o
+*.d
+*.lst
+*.map
+*.pbi
+*.pbd
+*.pbw
+*.browse
+*.xcl
+*.cout
+
+# IAR 链接器输出
+*.out
+*.hex
+*.HEX
+*.bin
+*.srec
+*.s19
+*.s37
+*.mot
+# IAR 调试器相关
+*.dni
+*.wsdt
+*.dbgdt
+*.ps1
+*.bat
+*.sim
+*.SIM
+# ---------------------------------------------------
+# 工程备份文件
+# ---------------------------------------------------
+*.bak
+*.backup
+*~
+*.tmp
+*.temp
+
+# ---------------------------------------------------
+# 操作系统生成文件
+# ---------------------------------------------------
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ---------------------------------------------------
+# IDE 配置目录
+# ---------------------------------------------------
+.spec_workflow/
+.spec-workflow/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+
+# Eclipse
+.project
+.cproject
+.settings/
+
+# ---------------------------------------------------
+# 特定目录规则
+# ---------------------------------------------------
+
+# CYT4BB7 车端 IAR 中间文件
+CYT4BB7_Car/project/iar/Debug*/
+CYT4BB7_Car/project/iar/Release*/
+CYT4BB7_Car/project/iar/*.dep
+CYT4BB7_Car/project/iar/settings/
+
+# CYT2BL3 飞机端 IAR 中间文件
+CYT2BL3_Air/project/iar/Debug*/
+CYT2BL3_Air/project/iar/Release*/
+CYT2BL3_Air/project/iar/*.dep
+CYT2BL3_Air/project/iar/settings/
+
+# ---------------------------------------------------
+# SDK 不必要的追踪文件
+# ---------------------------------------------------
+
+# 可选：如果SDK很大且不需要版本控制，取消下面的注释
+# CYT4BB7_Car/libraries/sdk/
+# CYT2BL3_Air/libraries/sdk/
+
+# ---------------------------------------------------
+# 日志文件
+# ---------------------------------------------------
+*.log
+logs/
+.spec_workflow/
+# ---------------------------------------------------
+# 压缩文件 (通常不追踪)
+# ---------------------------------------------------
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+
+# ---------------------------------------------------
+# 文档临时文件
+# ---------------------------------------------------
+~$*
+*.swp
+*.swo
+
+# ---------------------------------------------------
+# Python 相关 (如果有脚本工具)
+# ---------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+.Python
+venv/
+env/
+
+# ---------------------------------------------------
+# Node.js 相关 (如果有JS工具)
+# ---------------------------------------------------
+node_modules/
+npm-debug.log
+
+# ===================================================
+# 以下是应该保留追踪的文件类型
+# (仅作为参考，不需要取消注释)
+# ===================================================
+# !*.c         # C源代码
+# !*.h         # 头文件
+# !*.md        # 文档
+# !*.eww       # IAR工作空间文件
+# !*.ewp       # IAR工程文件
+# !Makefile    # 构建脚本
+# !README*     # 说明文档
+nul
+.claude/settings.local.json
+
+# ---------------------------------------------------
+# AI 相关
+# ---------------------------------------------------
+.claude
+
+
+# ---------------------------------------------------
+# 数据
+# ---------------------------------------------------
+data/
+project/code/Estimation/Pos_Est/new_pmw3901_data/**
+!project/code/Estimation/Pos_Est/new_pmw3901_data/
+!project/code/Estimation/Pos_Est/new_pmw3901_data/analyze_better_vel_acc_spectrum.py
+!project/code/Estimation/Pos_Est/new_pmw3901_data/select_acc_filter_candidate.py
+!project/code/Estimation/Pos_Est/new_pmw3901_data/compare_cf_ekf_replay.py
+!project/code/Estimation/Pos_Est/new_pmw3901_data/vel_acc_common.py
+project/code/Estimation/Pos_Est/inav_better_vel/**
+!project/code/Estimation/Pos_Est/inav_better_vel/
+!project/code/Estimation/Pos_Est/inav_better_vel/analyze_inav_better_vel.py
+!project/code/Estimation/Pos_Est/inav_better_vel/compare_inav_better_vel_runs.py
