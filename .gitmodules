@@ -6,3 +6,7 @@
 	path = CYT4BB7_Air
 	url = https://github.com/ZhangStudyLife/CYT4BB7_Air.git
 	branch = 串口测试
+[submodule "CYT2BL3_Image"]
+	path = CYT2BL3_Image
+	url = https://github.com/ZhangStudyLife/CYT2BL3_Image
+	branch = main
