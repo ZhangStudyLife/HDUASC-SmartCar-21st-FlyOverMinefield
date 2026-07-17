@@ -75,16 +75,22 @@ flow_left = height_m * flow_dec_x * 0.48076923f;
 flow_forward = height_m * flow_dec_y * 0.48076923f;
 ```
 
-When car data is fresh and the fused car lamp is valid, the corrected observation
-is:
+The image-derived coverage coefficient is:
 
 ```c
-flow_observation_x = flow_left + 0.67f * car_left;
-flow_observation_y = flow_forward + 0.67f * car_forward;
+radius = norm(lamp_center - projection_center);
+center_weight = clamp((70.0f - radius) / 50.0f, 0.0f, 1.0f);
+area_weight = clamp(lamp_width * lamp_length / 75.0f, 0.6f, 1.2f);
+coverage = clamp(center_weight * area_weight, 0.0f, 1.0f);
+
+flow_observation_x = flow_left + coverage * car_left;
+flow_observation_y = flow_forward + coverage * car_forward;
 ```
 
-Otherwise the correction coefficient is zero and the second estimator still
-fuses the ordinary optical-flow observation.
+When coverage is zero, the estimator fuses the ordinary ground optical-flow
+observation. When coverage is positive but car data is stale, the frame is
+rejected instead of treating the potentially car-contaminated flow as absolute
+aircraft velocity.
 
 Car data is fresh only when `g_car_sync_time_ms > 0` and the source timestamp has
 advanced within the last `200 ms`. A stale car velocity must never be applied.
@@ -104,14 +110,20 @@ For every new valid optical-flow frame:
 
 ```c
 innovation = clamp(observation - prediction, -100, 100);
-correction = 0.08f * innovation;
+correction = 0.12f * innovation;
 ```
 
 The correction vector is limited to `18 cm/s` per flow frame and the output
 vector is limited to `250 cm/s`. A frame is rejected when the sensor or height is
 invalid, the height is below `0.20 m` or above the existing TOF valid limit, a
-required value is not finite, or the corrected observation magnitude exceeds
-`300 cm/s`.
+required value is not finite, the corrected observation magnitude exceeds
+`300 cm/s`, the innovation norm exceeds `250 cm/s`, or the adjacent corrected
+observation jump exceeds `220 cm/s`.
+
+After startup or an LC302 gyro-decoupler timeout reset, four consecutive valid
+corrected observations are required before optical-flow fusion resumes. One or
+two isolated invalid sensor/height frames are skipped; three consecutive invalid
+frames clear the compact reacquisition state.
 
 During optical-flow outages, the second estimator applies the same `150 ms` and
 `500 ms` bounded inertial-hold decay policy as the existing estimator. When the
@@ -119,24 +131,28 @@ existing static accelerometer-bias learner is locked, the second velocity state
 is reset to zero.
 
 The first version intentionally does not duplicate the old multi-state soft
-health/reacquisition machine. Sensor validity, bounded innovation, bounded
-per-frame correction, observation rejection, outage decay, and output limiting
-provide the required compact protection while avoiding a second large state
-machine.
+health machine. Sensor validity, four-frame reacquisition, bounded innovation,
+bounded per-frame correction, observation rejection, outage decay, and output
+limiting provide compact protection while avoiding a second large state machine.
 
 ## Parameters
 
-The initial fixed deployment parameters are:
+The deployment parameters selected from the strict causal replay are:
 
 ```text
-car translation coefficient: 0.67
-optical-flow correction gain: 0.08
+optical-flow correction gain: 0.12
+coverage zero radius: 70 px
+coverage radius span: 50 px
+lamp area normalization: 75 px^2
+lamp area weight range: 0.6 to 1.2
 ```
 
-The car coefficient is the median of four held-out moving time blocks:
-`0.6694`, `0.6594`, `0.6693`, and `0.6962`. The selected gain gives the best
-conservative moving-error result while avoiding the faster/noisier initial
-response of gains above `0.10`.
+The earlier fixed coefficient `0.67` was the average contamination share across
+the log. Treating it as constant over-corrected when the car was away from the
+optical-flow projection point. The coverage model reduced moving/turning error
+and reduced output-limit events. Gain `0.16` gave the lowest pure moving score,
+but `0.12` stayed within one percent while producing lower stationary error and
+better balanced tail error.
 
 These constants are not added to `fc_params` or the communication menu in this
 change.
@@ -155,8 +171,9 @@ The replay reads the 33-column `D:\Downloads\光流车速debug.csv` log. It must
 The prior causal held-out comparison is the acceptance baseline:
 
 ```text
-moving RMSE: old 88.92 cm/s, target approximately 58.27 cm/s
-turning RMSE: old 93.04 cm/s, target approximately 57.48 cm/s
+stationary RMSE: old 32.97 cm/s, new approximately 21.57 cm/s
+moving RMSE: old 89.10 cm/s, new approximately 56.92 cm/s
+turning RMSE: old 93.13 cm/s, new approximately 63.02 cm/s
 ```
 
 Because no independent motion-capture or ground-truth velocity is logged, these
@@ -181,5 +198,4 @@ they do not prove absolute velocity accuracy.
 - Switching Mode4 or another controller to the new velocity output.
 - Adding tunable parameters or AirComm/car-menu entries.
 - Modeling vehicle rotational surface velocity or aircraft yaw-flow leakage.
-- Adding dynamic image-area or image-offset scaling of the car coefficient.
 - Refactoring or cleaning adjacent legacy code.
