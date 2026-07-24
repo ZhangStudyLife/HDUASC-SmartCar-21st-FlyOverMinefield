@@ -10,3 +10,7 @@
 	path = CYT2BL3_Image
 	url = https://github.com/ZhangStudyLife/CYT2BL3_Image
 	branch = national-2026
+[submodule "CYT4BB7_Car_F"]
+	path = CYT4BB7_Car_F
+	url = https://github.com/ZhangStudyLife/CYT4BB7_Car_F.git
+	branch = national-2026
