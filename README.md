@@ -1,6 +1,27 @@
-`git clone --branch national-2026 --depth 1 --recurse-submodules --shallow-submodules https://github.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield.git`
-
 # HDUASC SmartCar 21st — 飞跃雷区
+
+## 快速克隆与子仓库同步
+
+首次下载当前完整工程（总仓库及所有子仓库）：
+
+```bash
+git clone --branch national-2026 --depth 1 --recurse-submodules --shallow-submodules https://github.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield.git
+```
+
+- `--depth 1`：只下载当前所需的提交，不获取完整历史。
+- `--recurse-submodules`：自动克隆 Air、Image、Car 和 Car_F 子仓库。
+- `--shallow-submodules`：子仓库也仅下载当前所需的提交。
+
+`git checkout` 或 `git switch` 默认只切换本地已有内容，不会自动联网拉取总仓库或子仓库。
+
+日常同步总仓库指定的子仓库版本：
+
+```bash
+git pull --recurse-submodules
+git submodule update --init --recursive
+```
+
+第一条拉取总仓库新提交；第二条让每个子仓库回到总仓库当前记录的提交。如果需要主动拉到各子仓库 `national-2026` 的最新提交，则执行 `git submodule update --remote --recursive`，并在检查后提交总仓库更新后的子仓库指针。
 
 空地协同智能车竞赛项目。系统由 **无人机（飞机）** 与 **地面小车** 组成，无人机通过摄像头识别地面信标和车灯，将感知结果与自身姿态下发给小车，小车据此完成循迹导航。
 
