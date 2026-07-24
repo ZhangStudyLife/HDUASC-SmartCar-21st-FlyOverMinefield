@@ -1,12 +1,12 @@
 [submodule "CYT4bb7_Car"]
 	path = CYT4bb7_Car
 	url = https://github.com/choumouing/CYT4bb7_Car.git
-	branch = 2代车_IP张跃哲
+	branch = zj2026-provincial-final
 [submodule "CYT4BB7_Air"]
 	path = CYT4BB7_Air
 	url = https://github.com/ZhangStudyLife/CYT4BB7_Air.git
-	branch = 2代飞机_IP张跃哲
+	branch = zj2026-provincial-final
 [submodule "CYT2BL3_Image"]
 	path = CYT2BL3_Image
 	url = https://github.com/ZhangStudyLife/CYT2BL3_Image
-	branch = 前中后移植
+	branch = zj2026-provincial-final
