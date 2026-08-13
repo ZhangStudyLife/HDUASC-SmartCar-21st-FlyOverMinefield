@@ -73,11 +73,12 @@ git submodule update --init --recursive
 
 ### AirComm UART: 飞机 ↔ 小车
 
-- **物理**: UART3 @ 1.152Mbps
-- **帧格式**: `AA AA 55 55` + payload + CRC16-CCITT, 100Hz 双向
-- **飞机→车** (15 float): ToF高度 | roll/pitch/yaw | 水平速度 | 飞机状态 | CRSF 8通道
-- **车→飞机** (10 float): 车里程计速度 vel[x]/vel[y] | 预留字段
+- **物理**: Air UART2 ↔ Car UART3 @ 1.152Mbps
+- **帧格式**: `AA AA 55 55` + payload + CRC16-CCITT，RUN_DATA 200Hz 双向（5ms）
+- **飞机→车**: 飞行时 15 float 关键包，待机时 52 float 诊断包
+- **车→飞机** (11 float): 车速、姿态、目标量及基于 1ms 单调时钟的时间戳
 - **心跳**: 200ms 间隔，600ms 未收到判定离线
+- **摄像头链路**: Camera SPI 服务 200Hz；帧驱动算法、车灯融合、投影补偿和图像控制为 100Hz，投影补偿延迟约 40ms
 
 ## 关键技术点
 
