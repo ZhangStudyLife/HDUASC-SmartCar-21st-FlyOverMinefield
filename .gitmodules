@@ -14,3 +14,7 @@
 	path = CYT4BB7_Car_F
 	url = https://github.com/ZhangStudyLife/CYT4BB7_Car_F.git
 	branch = national-2026
+[submodule "BeaconImageAnalyzer"]
+	path = BeaconImageAnalyzer
+	url = https://github.com/ZhangStudyLife/BeaconImageAnalyzer.git
+	branch = car_plan
