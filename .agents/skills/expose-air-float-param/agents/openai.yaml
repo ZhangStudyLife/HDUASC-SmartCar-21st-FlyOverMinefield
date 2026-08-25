@@ -1,4 +1,0 @@
-interface:
-  display_name: "Expose Air Float Parameter"
-  short_description: "Expose project Air float parameters to the Car menu"
-  default_prompt: "Use $expose-air-float-param to connect an existing Air float global to AirComm and the Car menu."
