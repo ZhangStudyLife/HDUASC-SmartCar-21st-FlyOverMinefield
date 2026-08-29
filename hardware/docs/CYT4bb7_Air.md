@@ -41,7 +41,7 @@
 
 （古早产物，实物已丢失）
 
-![第一代飞控](../images/fc-gen1.png)
+![第一代飞控](../boards/CYT4BB7_Air/images/fc-gen1.png)
 
 ## 第二代（V2）
 
@@ -54,7 +54,7 @@
 
 （古早产物，实物已丢失）
 
-![第二代飞控](../images/fc-gen2.png)
+![第二代飞控](../boards/CYT4BB7_Air/images/fc-gen2.png)
 
 ## 第三代（V3）
 
@@ -65,7 +65,7 @@
 - 其余供电方案沿用第一、二代；
 - 外设上删掉 BMP388 气压计——电控认为室内环境下该传感器数据不够精准，不如只用 ToF 定高。
 
-![第三代飞控](../images/fc-gen3.png)
+![第三代飞控](../boards/CYT4BB7_Air/images/fc-gen3.png)
 
 ## 第四代（V4）
 
@@ -80,7 +80,7 @@
 
 这是省赛赛场用的飞控。
 
-![第四代飞控](../images/fc-gen4.png)
+![第四代飞控](../boards/CYT4BB7_Air/images/fc-gen4.png)
 
 ## 第五代（V5）
 
@@ -97,15 +97,15 @@
 
 这是国赛赛场用的飞控。
 
-![第五代飞控](../images/fc-gen5.png)
+![第五代飞控](../boards/CYT4BB7_Air/images/fc-gen5.png)
 
 ## 实物照片
 
 （以下两张为文档中附带的实物照片，具体对应哪一版请作者确认）
 
-![实物照片 1](../images/fc-photo-1.jpg)
+![实物照片 1](../boards/CYT4BB7_Air/images/fc-photo-1.jpg)
 
-![实物照片 2](../images/fc-photo-2.jpg)
+![实物照片 2](../boards/CYT4BB7_Air/images/fc-photo-2.jpg)
 
 ## 踩坑汇总
 
