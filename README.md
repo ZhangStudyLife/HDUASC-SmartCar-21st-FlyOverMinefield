@@ -1,132 +1,131 @@
-# HDUASC SmartCar 21st — 飞跃雷区
+# 第 21 届全国大学生智能汽车竞赛：飞跃雷区
 
-## 快速克隆与子仓库同步
+> [比赛年份] 年，[学校 / 队伍名称]参加第 21 届全国大学生智能汽车竞赛“飞跃雷区”组，获得全国总决赛冠军。这里是整套项目的母仓库，代码、PCB、结构件、调试工具和文档都从这里开始找。
 
-首次下载当前完整工程（总仓库及所有子仓库）：
+比赛成绩、队伍名称、现场照片和最终成绩单由我后续补充。现在先把项目的阅读入口和仓库关系整理清楚，免得别人一上来就掉进某个子仓库的代码里。
+
+## 先看这里
+
+如果只想先了解我们做了什么，建议按这个顺序：
+
+1. [待填写：项目 / 比赛演示视频]
+2. [国赛结构讲解视频](https://www.bilibili.com/video/BV1894o62Ej4/)
+3. [上位机调试路径规划和图像兜底](https://www.bilibili.com/video/BV1Rm4m6fEMv/)
+4. [Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
+5. 再根据下面的模块入口，跳到自己真正关心的部分。
+
+这几个视频和总文档是整个开源内容的“入口层”。具体实现会分散在不同子仓库里，但不建议把它们当成第一阅读材料。
+
+## 我们做的是什么
+
+这是一个空地协同的智能车项目：无人机在空中识别地面信标和车灯，把视觉结果、飞机姿态和高度等信息交给飞控；飞控经过相机模型、三摄融合和路径规划，计算车模应该行驶的方向和速度；车模再执行速度控制，并把实际速度回传给飞机。
+
+简单说就是：
+
+```text
+空中图像板识别信标 / 车灯
+        ↓ SPI
+CYT4BB7_Air：双核飞控、姿态高度、相机模型、CarPlan3
+        ↓ AirComm UART
+CYT4bb7_Car：麦轮控制、编码器、里程计和车模执行
+```
+
+## 整体方案
+
+项目的主要数据流如下：
+
+```text
+MT9V03X 摄像头
+    -> CYT2BL3_Image 识别信标和车灯
+    -> Camera SPI
+    -> CYT4BB7_Air CM7_1 接收并通过 IPC 发布
+    -> CM7_0 读取 image_data
+    -> Three_Camera 将像素反投影到水平坐标
+    -> CarPlan3 过滤、融合、选目标并输出车模速度
+    -> AirComm 下发给 CYT4bb7_Car
+    -> 车模执行并回传实际速度
+```
+
+这里面每一层都有自己的边界：图像板负责“看见了什么”，Air 负责“这些目标在空间中在哪里、车应该往哪里走”，Car 负责“车轮到底怎么转”。后面的文档也按这个边界组织，遇到问题时可以先判断它属于哪一层。
+
+## 核心入口
+
+总仓库固定的子模块版本和子仓库远端最新文档不是一回事，所以这里明确分成两列：
+
+| 主题     | 子仓库 / 文档最新入口                                                                                                                                                                      | 当前总仓库固定版本                                       |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
+| 国赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                           | [当前国赛结构文件](./structure/national/)                 |
+| 省赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                           | [当前省赛结构文件](./structure/provincial/)               |
+| 硬件 PCB | [硬件 PCB 总文档](./hardware/README.md)                                                                                                                                                     | [当前 PCB 源文件](./hardware/boards/)                     |
+| Air 飞控 | [Air 最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)                                                                                                | [固定版本 Air](./CYT4BB7_Air/)                            |
+| 图像板   | [Image 最新仓库](https://github.com/ZhangStudyLife/CYT2BL3_Image/tree/national-2026)                                                                                                        | [固定版本 Image](./CYT2BL3_Image/)                        |
+| 上位机   | [上位机最新主文档](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)；[CarPlan 分支](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md) | [固定版本上位机](./BeaconImageAnalyzer/)                  |
+| 车端     | [Car 仓库入口](https://github.com/choumouing/CYT4bb7_Car/)；[Car_F 国赛分支](https://github.com/ZhangStudyLife/CYT4BB7_Car_F/tree/national-2026)                                             | [固定版本 Car](./CYT4bb7_Car/) / [Car_F](./CYT4BB7_Car_F/) |
+
+Car 端的具体文档目前不是这套开源内容的主线，先把它作为完整工程入口保留。真正想理解“飞机为什么能让车跑起来”，建议先看 Air、硬件和结构，再回头看 Car。
+
+## 按目标阅读
+
+### 只想了解比赛方案
+
+先看本页的[整体方案](#整体方案)，然后看[结构总文档](./structure/README.md)和[硬件 PCB](./hardware/README.md)。结构总文档会直接引流国赛/省赛视频和对应的 SolidWorks 文件，这条路线能先建立“最终拿去比赛的东西长什么样”的概念。
+
+### 想理解无人机飞控
+
+进入 [Air 最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)，按“软件架构 -> IMU -> 高度 -> 遥控器/CRSF -> 通信”的顺序读。Air 文档会再跳到具体源码和实验记录。
+
+### 想理解图像到路径规划
+
+进入 Air 的[相机模型标定](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/04-competition/camera-model-calibration.md)，再看 [CarPlan3 上位机调试流程](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/04-competition/car-plan3-debug-workflow.md)。这两篇会解释为什么不能只在像素域里看一条曲线，以及如何通过日志回放区分视觉、几何、规划和底盘问题。
+
+### 想复现上位机调试
+
+先看[上位机调试视频](https://www.bilibili.com/video/BV1Rm4m6fEMv/)，再进入 [BeaconImageAnalyzer 最新主文档](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)。如果要看 CarPlan3 专用版本，进入它的 [`car_plan` 分支 README](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md)。
+
+## 仓库结构
+
+```text
+.
+├─ hardware/                  PCB 源文件、板卡照片和硬件迭代记录
+├─ structure/                 国赛、省赛结构件和结构说明
+├─ CYT4BB7_Air/               空中控制端代码和飞控文档
+├─ CYT2BL3_Image/             摄像头采集与图像识别代码
+├─ BeaconImageAnalyzer/       WiFi/JustFloat 接收、记录和回放工具
+├─ CYT4bb7_Car/               车端代码
+└─ CYT4BB7_Car_F/             另一套车端国赛工程
+```
+
+`hardware/` 和 `structure/` 是母仓库自己的内容；Air、Image、Car 和上位机是独立子仓库。不要在 Air 里寻找 PCB 源文件，也不要把总仓库固定的子模块提交当成远端子仓库的最新版本。
+
+## 克隆和版本关系
+
+首次下载当前完整工程：
 
 ```bash
 git clone --branch national-2026 --depth 1 --recurse-submodules --shallow-submodules https://github.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield.git
 ```
 
-- `--depth 1`：只下载当前所需的提交，不获取完整历史。
-- `--recurse-submodules`：自动克隆 Air、Image、Car 和 Car_F 子仓库。
-- `--shallow-submodules`：子仓库也仅下载当前所需的提交。
-
-`git checkout` 或 `git switch` 默认只切换本地已有内容，不会自动联网拉取总仓库或子仓库。
-
-日常同步总仓库指定的子仓库版本：
+已经克隆后，同步总仓库记录的固定子模块版本：
 
 ```bash
 git pull --recurse-submodules
 git submodule update --init --recursive
 ```
 
-第一条拉取总仓库新提交；第二条让每个子仓库回到总仓库当前记录的提交。如果需要主动拉到各子仓库 `national-2026` 的最新提交，则执行 `git submodule update --remote --recursive`，并在检查后提交总仓库更新后的子仓库指针。
+如果只是想看子仓库远端的最新内容，请使用上面“核心入口”里的 GitHub 最新入口，不要直接在本地执行 `git submodule update --remote` 后就认为它和总仓库已经匹配。主动更新子仓库后，必须检查接口兼容性，再决定是否提交新的子模块指针。
 
-空地协同智能车竞赛项目。系统由 **无人机（飞机）** 与 **地面小车** 组成，无人机通过摄像头识别地面信标和车灯，将感知结果与自身姿态下发给小车，小车据此完成循迹导航。
+## 文档阅读约定
 
-```
-┌─────────────────┐      SPI (SCB0)       ┌──────────────────────┐     UART AirComm     ┌──────────────────┐
-│  CYT2BL3_Image   │ ◄──────────────────► │    CYT4BB7_Air        │ ◄──────────────────► │   CYT4bb7_Car     │
-│  (空中感知层)     │                      │    (空中控制与通信中枢)  │                      │   (地面执行层)    │
-│                  │  beacon(x,y,radius)  │                       │ 飞机姿态/高度/CRSF遥控 │                  │
-│  MT9V03X 摄像头   │  ×4 + car_lamp ×1   │  双核 M7:             │ ←─────────────────── │  双核 M7:         │
-│  连通域+PCA 特征   │ ──────────────────► │  ·CM7_0 飞控 1000Hz   │  车里程计速度          │  ·麦轮串级PID      │
-│  多阈值级联检测    │                     │  ·CM7_1 SPI+图像转发   │ ────────────────────► │  ·编码器+IMU       │
-│                  │  flight_state/       │                       │                      │  ·里程计+打滑检测  │
-│  CYT2BL3 M4 单核  │ ◄────────────────── │  级联PID+Betaflight   │                      │                  │
-└─────────────────┘    board_id            │  4×TOF高度融合        │                      └──────────────────┘
-                                           │  Mahony AHRS          │
-                                           └──────────────────────┘
-```
+- 每个重要目录都有一个总文档，负责列清单、给出视频和阅读路线。
+- 具体 Markdown 负责讲实现、实验过程和个人取舍，不在总 README 里重复粘贴代码。
+- 正式文档末尾应能返回所在子仓库总文档和本总仓库。
+- 图片放在所属主题目录，使用能看懂含义的文件名，不使用无法判断内容的纯时间戳作为唯一名字。
+- 新增视频或文档时，先更新对应总文档入口，再补充正文，避免资料已经存在但读者找不到。
 
-## 项目结构
+## 开源状态
 
-| 子仓库                               | 芯片                        | 职责                                                        |
-| :----------------------------------- | :-------------------------- | :---------------------------------------------------------- |
-| [`CYT2BL3_Image`](./CYT2BL3_Image/) | CYT2BL3 (Cortex-M4, 160MHz) | 空中感知：摄像头采集 + 信标/车灯识别，通过 SPI 上报飞机     |
-| [`CYT4BB7_Air`](./CYT4BB7_Air/)     | CYT4BB7 (双核 Cortex-M7)    | 飞控核心：姿态解算、级联 PID 控制、与图像板和车板的双向通信 |
-| [`CYT4bb7_Car`](./CYT4bb7_Car/)     | CYT4BB7 (双核 Cortex-M7)    | 地面执行：麦轮控制、里程计融合、循迹导航                    |
+- 比赛年份、队伍信息、获奖证明和许可证：[待填写]
+- 当前哪些代码是最终比赛版本，哪些是实验或历史版本：[待填写]
+- 第三方库、参考项目和 AI 辅助说明：[待填写]
 
-## 三子系统协作流程
-
-```
-1. 飞机摄像头(MT9V03X)采集 188×120 灰度图
-        ↓
-2. CYT2BL3 运行图像算法（BFS 连通域 + PCA 特征提取 + 多阈值级联）
-        ↓ SPI 上行: 4个信标坐标 + 1个车灯矩形(位置/长宽/角度)
-3. CYT4BB7_Air CM7_1 接收 → IPC → CM7_0 飞控算法
-        ↓ AirComm UART 下行: 飞机姿态(roll/pitch/yaw) + 高度 + CRSF遥控通道
-4. CYT4bb7_Car 解析控制指令 → 麦轮速度环PID → 电机PWM
-        ↓ AirComm UART 上行: 车里程计速度
-5. CYT4BB7_Air 接收车速度 → 跟车模式速度闭环
-```
-
-## 通信拓扑
-
-### SPI: 图像板 ↔ 飞机
-
-- **物理**: CYT4BB7 的 SCB6 (SPI Master) ↔ CYT2BL3 的 SCB0 (SPI Slave)，Motorola Mode 0
-- **帧格式**: `AA 55` + CMD(0x20) + payload_len + payload + CRC16-LE + `ED`
-- **上行** (2BL3→Air): 协议版本 + 4 beacon(各13B) + 1 car_lamp(21B) = **77B** 应用数据
-- **下行** (Air→2BL3): magic(0x5A) + board_id + flight_state + 图传/显示使能 = **9B**
-
-### AirComm UART: 飞机 ↔ 小车
-
-- **物理**: Air UART2 ↔ Car UART3 @ 1.152Mbps
-- **帧格式**: `AA AA 55 55` + payload + CRC16-CCITT，RUN_DATA 200Hz 双向（5ms）
-- **飞机→车**: 飞行时 15 float 关键包，待机时 52 float 诊断包
-- **车→飞机** (11 float): 车速、姿态、目标量及基于 1ms 单调时钟的时间戳
-- **心跳**: 200ms 间隔，600ms 未收到判定离线
-- **摄像头链路**: Camera SPI 服务 200Hz；帧驱动算法、车灯融合、投影补偿和图像控制为 100Hz，投影补偿延迟约 40ms
-
-## 关键技术点
-
-### 图像板 (`CYT2BL3_Image`)
-
-- **多阈值级联**: 4 级分割 (200→150→130→100)，逐级检测不同亮度的信标
-- **车灯掩膜**: 先检测车灯（高阈值 200 + elongation > 1.6），构建 mask 后再检测信标，避免灯周围亮像素干扰
-- **PCA 特征提取**: 对每个连通域计算协方差矩阵→特征值分解→长轴/短轴/倾角/等效半径
-- **帧间跟踪**: 最近邻匹配（距离阈值 36px），tracked slot 限制 4 个，灯出现后 120 帧允许新 slot
-- **双板支持**: board_id=0 和 board_id=1 各运行独立算法实例
-- **WiFi 图传**: ESP32 SPI 模块 TCP 推流到上位机调试
-
-### 飞机 (`CYT4BB7_Air`)
-
-- **双核分工**: CM7_0 跑飞控 1000Hz 实时任务，CM7_1 管理 2 块 2BL3 SPI 通信 + IPC 转发
-- **级联 PID**: 位置(50Hz)→速度(100Hz)→角度(500Hz)→角速度(1000Hz)→混控
-- **增强 PID**: PT3 前馈平滑、PT3 输出低通、二阶 Butterworth D 项滤波、Anti-Windup、积分松弛
-- **高度融合**: 4×VL53L1X TOF（机臂下方各一）+ 加速度计惯性导航
-- **悬停油门在线学习**: 借鉴 ArduPilot MOT_THST_HOVER
-- **9 种飞行模式**: MODE_4(跟图像信标) / MODE_5(跟车) / MODE_7(跟车V2)
-
-### 小车 (`CYT4bb7_Car`)
-
-- **麦轮控制**: 逆运动学解算 + 串级 PID(yaw角度→角速度→轮速) + 四轮独立前馈(KS/KV/KSTART)
-- **里程计融合**: 麦轮正运动学 + 打滑检测(门控滤波) + 信标位置修正(fixator)
-- **传感器**: ICM42688 IMU(Mahony AHRS) + 四路正交编码器
-
-## 仓库初始化
-
-```bash
-# 首次克隆（含子模块）
-git clone --recursive <repo-url>
-
-# 已克隆后补齐子模块
-git submodule update --init --recursive
-
-# 拉取各子模块远端最新
-git submodule update --init --recursive --remote
-```
-
-## 联调文档
-
-- 空地通信协议: [`空地通信互传数据手册.md`](./空地通信互传数据手册.md)
-- 飞控与图像板 SPI 设计: [`CYT4BB7_Air/doc/飞控和图像板的SPI主从通信设计方案.md`](./CYT4BB7_Air/doc/飞控和图像板的SPI主从通信设计方案.md)
-- 车端摄像头迁移: [`CYT4bb7_Car/docs/air_camera_comm_migration.md`](./CYT4bb7_Car/docs/air_camera_comm_migration.md)
-
-## 版本管理
-
-- 总仓库通过 `git submodule` 固定三个子项目的提交版本
-- 联调以总仓库记录的指针为准，避免版本漂移
-- 更新子项目后需在总仓库提交新的 submodule 指针
+[Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md) · [硬件 PCB 总文档](./hardware/README.md) · [结构总文档](./structure/README.md)

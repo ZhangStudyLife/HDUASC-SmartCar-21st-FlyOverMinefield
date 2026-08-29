@@ -2,6 +2,10 @@
 
 > 车机协同系留四旋翼 · 全部自研硬件 · 第 21 届全国大学生智能汽车竞赛「飞跃雷区」组
 
+> 这里的 PCB 源文件、板卡照片和硬件迭代记录由总仓库统一维护。Air 子仓库里的硬件说明只负责跳转到这里，不在两个仓库之间复制一份。
+
+[返回总仓库 README](../README.md) · [Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
+
 > 文档状态：持续迭代中。下表中的迭代记录可直接在线阅读，PCB 源文件可直接下载。
 
 ## 板卡索引
@@ -19,6 +23,7 @@
 ## 当前说明
 
 - 迭代记录位于 [`docs/`](docs/) 目录，可在 GitHub 页面直接打开阅读。
+- PCB 工程文件位于 [`boards/`](boards/) 目录，各板卡的图片放在对应板卡的 `images/` 目录。
 - 表格中的“下载PCB源文件”链接指向仓库 `national-2026` 分支中的 `.epro2` 文件，点击即可下载。
 - 当前仓库已提交的 PCB 源文件均为 `.epro2` 工程文件；暂未提供原理图 PDF 或 Gerber 文件。
 - 已补充双路有刷驱动（DRV8701）、铝基板红外灯板和 ICM42688P FPC 陀螺仪的 PCB 源文件，分别归档在 `boards/BrushedDriver/source/`、`boards/LightBoard/source/` 和 `boards/FPC-Gyro/source/`，点击表格中的“下载PCB源文件”即可下载。
