@@ -1,20 +1,41 @@
-# 第 21 届全国大学生智能汽车竞赛：飞跃雷区
+# 第 21 届全国大学生智能汽车竞赛：飞跃雷区开源项目
 
-> [比赛年份] 年，[学校 / 队伍名称]参加第 21 届全国大学生智能汽车竞赛“飞跃雷区”组，获得全国总决赛冠军。这里是整套项目的母仓库，代码、PCB、结构件、调试工具和文档都从这里开始找。
+> 2026 年，杭电飞跃雷区三队参加第 21 届全国大学生智能汽车竞赛“飞跃雷区”组，获得全国总决赛冠军。这里是整套项目的母仓库，代码、PCB、结构件、调试工具和文档都从这里开始找
 
-比赛成绩、队伍名称、现场照片和最终成绩单由我后续补充。现在先把项目的阅读入口和仓库关系整理清楚，免得别人一上来就掉进某个子仓库的代码里。
+## 比赛规则前情提要
+
+[blog.csdn.net/zhuoqingjoking97298/article/details/154598625](https://blog.csdn.net/zhuoqingjoking97298/article/details/154598625) **总规则**
+
+[blog.csdn.net/zhuoqingjoking97298/article/details/154691546](https://blog.csdn.net/zhuoqingjoking97298/article/details/154691546) 雷区规则
+
+[zhuoqing.blog.csdn.net/article/details/157686655](https://zhuoqing.blog.csdn.net/article/details/157686655) 雷区的QA补充
+
+[blog.csdn.net/zhuoqingjoking97298/article/details/164053403](https://blog.csdn.net/zhuoqingjoking97298/article/details/164053403) 第二十一届全国大学生智能车竞赛全国总决赛（竞速组别）成绩与奖项
+
+大致规则为 , 使用指定MCU进行手搓飞控 , 自制无人机和车模 , 使用不长于1.5米的供电线缆进行供电 , 只允许无人机安装摄像头 , 实现车模的自动熄灭信标灯的操作 , 比拼灭同样的灯的谁花费更少的时间
+
+## 队伍成绩
+
+![1788055858022](image/README/1788055858022.png)
+
+决赛因为图像问题很严重 , 导致没有发挥出正常的水平 , 导致其实前四名的排序就是纯运气 , 按照实验室调试的最快速度可以达到26秒左右 , 预赛成绩是遥遥领先的 , 可以查看视频
+
+【21届智能车杭电飞跃雷区三队预赛14.5s杀死比赛】 https://www.bilibili.com/video/BV1hkh36wECt/?share_source=copy_web&vd_source=e1d728dcf1588ebbb024adeca01441d7
+
+## 获奖证书
+
+![1788056447349](image/README/1788056447349.jpg)![1788056478348](image/README/1788056478348.jpg)
 
 ## 先看这里
 
 如果只想先了解我们做了什么，建议按这个顺序：
 
-1. [待填写：项目 / 比赛演示视频]
-2. [国赛结构讲解视频](https://www.bilibili.com/video/BV1894o62Ej4/)
-3. [上位机调试路径规划和图像兜底](https://www.bilibili.com/video/BV1Rm4m6fEMv/)
-4. [Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
-5. 再根据下面的模块入口，跳到自己真正关心的部分。
-
-这几个视频和总文档是整个开源内容的“入口层”。具体实现会分散在不同子仓库里，但不建议把它们当成第一阅读材料。
+1. 【21届智能车杭电飞跃雷区三队预赛14.5s杀死比赛】 https://www.bilibili.com/video/BV1hkh36wECt/?share_source=copy_web&vd_source=e1d728dcf1588ebbb024adeca01441d74
+2. [有些故事，适合留在最好的时候](https://www.bilibili.com/video/BV17L8J6fEYQ/?spm_id_from=333.1387.homepage.video_card.click)
+3. [国赛结构讲解视频](https://www.bilibili.com/video/BV1894o62Ej4/)
+4. [上位机调试路径规划和图像兜底](https://www.bilibili.com/video/BV1Rm4m6fEMv/)
+5. [Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
+6. 再根据下面的模块入口，跳到自己真正关心的部分。
 
 ## 我们做的是什么
 
@@ -30,23 +51,21 @@ CYT4BB7_Air：双核飞控、姿态高度、相机模型、CarPlan3
 CYT4bb7_Car：麦轮控制、编码器、里程计和车模执行
 ```
 
-## 整体方案
+## 我在这个项目遇到的难点
 
-项目的主要数据流如下：
+1. 前期对于飞控了解不够多 , 花费很多时间了解电机选型,桨叶选型,对比众多开源飞控的区别花费了很多时间
+2. 硬件画板能力和迭代速度导致前期飞机结构非常非常差劲(前硬件队友就是摆子,四月份没画出有刷驱动,后面换了大一学弟,毕竟是学弟要求不能这么高了,但客观而言硬件拖慢了整体的进度,六月份才刚有第一版电调可用,包括前期的三摄方案也因为硬件问题推进了两个月没硬件供我调试)
+3. 高度传感器的选型研究了很久,寒假期间花费很多时间在气压计上面
+4. 光流的选型和融合 , 这个无人机的水平速度环从3月份调到7月份
+5. 多摄像头的摆放位置 , 前期摆放使用 3个摄像头互相夹角60°
+6. 队伍内没有专业的结构 , 导致结构设计每次都要迭代三四次才会初具人形,队友初次绘制的机架花费了800大洋,厚度打了8mm,跟坦克一样根本不可起飞
+7. 图像算法反馈的image_data可用性很低 ,导致路径算法一直在做兜底
 
-```text
-MT9V03X 摄像头
-    -> CYT2BL3_Image 识别信标和车灯
-    -> Camera SPI
-    -> CYT4BB7_Air CM7_1 接收并通过 IPC 发布
-    -> CM7_0 读取 image_data
-    -> Three_Camera 将像素反投影到水平坐标
-    -> CarPlan3 过滤、融合、选目标并输出车模速度
-    -> AirComm 下发给 CYT4bb7_Car
-    -> 车模执行并回传实际速度
-```
+## 忆往昔
 
-这里面每一层都有自己的边界：图像板负责“看见了什么”，Air 负责“这些目标在空间中在哪里、车应该往哪里走”，Car 负责“车轮到底怎么转”。后面的文档也按这个边界组织，遇到问题时可以先判断它属于哪一层。
+从大一一开学做实验室考核任务接触智能车 , 到学长引荐打 NXP 平衡竞速组 , 到实验室公众号的成立 , 到竭尽全力完善暑假集训和我的下一届学弟的招新培训 , 再到这一届飞跃雷区 , 这一路的风和雨单独写成了一篇回忆录 :
+
+[忆往昔](./忆往昔.md)
 
 ## 核心入口
 
@@ -54,8 +73,8 @@ MT9V03X 摄像头
 
 | 主题     | 子仓库 / 文档最新入口                                                                                                                                                                      | 当前总仓库固定版本                                       |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| 国赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                           | [当前国赛结构文件](./structure/national/)                 |
-| 省赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                           | [当前省赛结构文件](./structure/provincial/)               |
+| 国赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                         | [当前国赛结构文件](./structure/national/)                 |
+| 省赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                         | [当前省赛结构文件](./structure/provincial/)               |
 | 硬件 PCB | [硬件 PCB 总文档](./hardware/README.md)                                                                                                                                                     | [当前 PCB 源文件](./hardware/boards/)                     |
 | Air 飞控 | [Air 最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)                                                                                                | [固定版本 Air](./CYT4BB7_Air/)                            |
 | 图像板   | [Image 最新仓库](https://github.com/ZhangStudyLife/CYT2BL3_Image/tree/national-2026)                                                                                                        | [固定版本 Image](./CYT2BL3_Image/)                        |
@@ -76,7 +95,7 @@ Car 端的具体文档目前不是这套开源内容的主线，先把它作为�
 
 ### 想理解图像到路径规划
 
-进入 Air 的[相机模型标定](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/04-competition/camera-model-calibration.md)，再看 [CarPlan3 上位机调试流程](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/04-competition/car-plan3-debug-workflow.md)。这两篇会解释为什么不能只在像素域里看一条曲线，以及如何通过日志回放区分视觉、几何、规划和底盘问题。
+进入 Air 的[相机模型标定](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/03-competition/camera-model-calibration.md)，再看 [CarPlan3 上位机调试流程](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/03-competition/car-plan3-debug-workflow.md)。这两篇会解释为什么不能只在像素域里看一条曲线，以及如何通过日志回放区分视觉、几何、规划和底盘问题。
 
 ### 想复现上位机调试
 
