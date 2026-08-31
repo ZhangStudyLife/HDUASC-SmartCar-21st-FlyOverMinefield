@@ -4,34 +4,36 @@
 
 ## 比赛规则前情提要
 
-[blog.csdn.net/zhuoqingjoking97298/article/details/154598625](https://blog.csdn.net/zhuoqingjoking97298/article/details/154598625) **总规则**
+- [**总规则**](https://blog.csdn.net/zhuoqingjoking97298/article/details/154598625)
+- [**雷区规则**](https://blog.csdn.net/zhuoqingjoking97298/article/details/154691546)
+- [**雷区的QA补充**](https://zhuoqing.blog.csdn.net/article/details/157686655)
+- [第二十一届全国大学生智能车竞赛全国总决赛（竞速组别）成绩与奖项](https://blog.csdn.net/zhuoqingjoking97298/article/details/164053403)
 
-[blog.csdn.net/zhuoqingjoking97298/article/details/154691546](https://blog.csdn.net/zhuoqingjoking97298/article/details/154691546) 雷区规则
-
-[zhuoqing.blog.csdn.net/article/details/157686655](https://zhuoqing.blog.csdn.net/article/details/157686655) 雷区的QA补充
-
-[blog.csdn.net/zhuoqingjoking97298/article/details/164053403](https://blog.csdn.net/zhuoqingjoking97298/article/details/164053403) 第二十一届全国大学生智能车竞赛全国总决赛（竞速组别）成绩与奖项
-
-大致规则为 , 使用指定MCU进行手搓飞控 , 自制无人机和车模 , 使用不长于1.5米的供电线缆进行供电 , 只允许无人机安装摄像头 , 实现车模的自动熄灭信标灯的操作 , 比拼灭同样的灯的谁花费更少的时间
+大致规则为 : 使用指定MCU进行手搓飞控 , 自制无人机和车模 , 使用不长于1.5米的供电线缆进行供电 , 只允许无人机安装摄像头 , 实现车模自动熄灭信标灯的操作 , 比拼灭掉同样的灯谁花费的时间更少
 
 ## 队伍成绩
 
-![1788055858022](image/README/1788055858022.png)
+<p align="center">
+  <img src="image/README/1788055858022.png" width="78%" alt="第21届国赛飞跃雷区组成绩表 , 杭电飞跃雷区三队一等奖">
+</p>
 
-决赛因为图像问题很严重 , 导致没有发挥出正常的水平 , 导致其实前四名的排序就是纯运气 , 按照实验室调试的最快速度可以达到26秒左右 , 预赛成绩是遥遥领先的 , 可以查看视频
+决赛因为图像问题很严重 , 没能发挥出正常的水平 , 其实前四名的排序就是纯运气。实验室里调试出来的最快速度可以达到26秒左右 , 预赛成绩是遥遥领先的 , 可以查看视频
 
-【21届智能车杭电飞跃雷区三队预赛14.5s杀死比赛】 https://www.bilibili.com/video/BV1hkh36wECt/?share_source=copy_web&vd_source=e1d728dcf1588ebbb024adeca01441d7
+[【21届智能车杭电飞跃雷区三队预赛14.5s杀死比赛】](https://www.bilibili.com/video/BV1hkh36wECt/)
 
 ## 获奖证书
 
-![1788056447349](image/README/1788056447349.jpg)![1788056478348](image/README/1788056478348.jpg)
+<p align="center">
+  <img src="image/README/1788056447349.jpg" width="42%" alt="全国总决赛飞跃雷区一等奖证书（第1名）">
+  <img src="image/README/1788056478348.jpg" width="42%" alt="分赛区飞跃雷区一等奖证书（第1名）">
+</p>
 
 ## 先看这里
 
 如果只想先了解我们做了什么，建议按这个顺序：
 
-1. 【21届智能车杭电飞跃雷区三队预赛14.5s杀死比赛】 https://www.bilibili.com/video/BV1hkh36wECt/?share_source=copy_web&vd_source=e1d728dcf1588ebbb024adeca01441d74
-2. [有些故事，适合留在最好的时候](https://www.bilibili.com/video/BV17L8J6fEYQ/?spm_id_from=333.1387.homepage.video_card.click)
+1. [【21届智能车杭电飞跃雷区三队预赛14.5s杀死比赛】](https://www.bilibili.com/video/BV1hkh36wECt/)
+2. [有些故事，适合留在最好的时候](https://www.bilibili.com/video/BV17L8J6fEYQ/)
 3. [国赛结构讲解视频](https://www.bilibili.com/video/BV1894o62Ej4/)
 4. [上位机调试路径规划和图像兜底](https://www.bilibili.com/video/BV1Rm4m6fEMv/)
 5. [Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
@@ -53,7 +55,7 @@ CYT4bb7_Car：麦轮控制、编码器、里程计和车模执行
 
 ## 我在这个项目遇到的难点
 
-1. 前期对于飞控了解不够多 , 花费很多时间了解电机选型,桨叶选型,对比众多开源飞控的区别花费了很多时间
+1. 前期对于飞控了解不够多 , 电机选型、桨叶选型、对比众多开源飞控的区别 , 都花费了很多时间
 2. 硬件画板能力和迭代速度导致前期飞机结构非常非常差劲(前硬件队友就是摆子,四月份没画出有刷驱动,后面换了大一学弟,毕竟是学弟要求不能这么高了,但客观而言硬件拖慢了整体的进度,六月份才刚有第一版电调可用,包括前期的三摄方案也因为硬件问题推进了两个月没硬件供我调试)
 3. 高度传感器的选型研究了很久,寒假期间花费很多时间在气压计上面
 4. 光流的选型和融合 , 这个无人机的水平速度环从3月份调到7月份
@@ -63,7 +65,7 @@ CYT4bb7_Car：麦轮控制、编码器、里程计和车模执行
 
 ## 忆往昔
 
-从大一一开学做实验室考核任务接触智能车 , 到学长引荐打 NXP 平衡竞速组 , 到实验室公众号的成立 , 到竭尽全力完善暑假集训和我的下一届学弟的招新培训 , 再到这一届飞跃雷区 , 这一路的风和雨单独写成了一篇回忆录 :
+从大一一开学做实验室考核任务接触智能车 , 到学长引荐打 NXP 平衡竞速组 , 再到这一届飞跃雷区 , 这一路的风和雨单独写成了一篇回忆录 :
 
 [忆往昔](./忆往昔.md)
 
@@ -87,7 +89,7 @@ Car 端的具体文档目前不是这套开源内容的主线，先把它作为�
 
 ### 只想了解比赛方案
 
-先看本页的[整体方案](#整体方案)，然后看[结构总文档](./structure/README.md)和[硬件 PCB](./hardware/README.md)。结构总文档会直接引流国赛/省赛视频和对应的 SolidWorks 文件，这条路线能先建立“最终拿去比赛的东西长什么样”的概念。
+先看本页的[整体方案](#我们做的是什么)，然后看[结构总文档](./structure/README.md)和[硬件 PCB](./hardware/README.md)。结构总文档会直接引流国赛/省赛视频和对应的 SolidWorks 文件，这条路线能先建立“最终拿去比赛的东西长什么样”的概念。
 
 ### 想理解无人机飞控
 
@@ -132,19 +134,5 @@ git submodule update --init --recursive
 ```
 
 如果只是想看子仓库远端的最新内容，请使用上面“核心入口”里的 GitHub 最新入口，不要直接在本地执行 `git submodule update --remote` 后就认为它和总仓库已经匹配。主动更新子仓库后，必须检查接口兼容性，再决定是否提交新的子模块指针。
-
-## 文档阅读约定
-
-- 每个重要目录都有一个总文档，负责列清单、给出视频和阅读路线。
-- 具体 Markdown 负责讲实现、实验过程和个人取舍，不在总 README 里重复粘贴代码。
-- 正式文档末尾应能返回所在子仓库总文档和本总仓库。
-- 图片放在所属主题目录，使用能看懂含义的文件名，不使用无法判断内容的纯时间戳作为唯一名字。
-- 新增视频或文档时，先更新对应总文档入口，再补充正文，避免资料已经存在但读者找不到。
-
-## 开源状态
-
-- 比赛年份、队伍信息、获奖证明和许可证：[待填写]
-- 当前哪些代码是最终比赛版本，哪些是实验或历史版本：[待填写]
-- 第三方库、参考项目和 AI 辅助说明：[待填写]
 
 [Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md) · [硬件 PCB 总文档](./hardware/README.md) · [结构总文档](./structure/README.md)
