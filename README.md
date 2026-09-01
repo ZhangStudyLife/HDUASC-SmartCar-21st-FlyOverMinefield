@@ -1,4 +1,4 @@
-# 第 21 届全国大学生智能汽车竞赛：飞跃雷区开源项目
+# 第 21 届全国大学生智能汽车竞赛：飞跃雷区全国冠军开源
 
 > 2026 年，杭电飞跃雷区三队参加第 21 届全国大学生智能汽车竞赛“飞跃雷区”组，获得全国总决赛冠军。这里是整套项目的母仓库，代码、PCB、结构件、调试工具和文档都从这里开始找
 
@@ -71,17 +71,17 @@ CYT4bb7_Car：麦轮控制、编码器、里程计和车模执行
 
 ## 核心入口
 
-总仓库固定的子模块版本和子仓库远端最新文档不是一回事，所以这里明确分成两列：
+各模块当前使用的最新版本如下：
 
-| 主题     | 子仓库 / 文档最新入口                                                                                                                                                                      | 当前总仓库固定版本                                       |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| 国赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                         | [当前国赛结构文件](./structure/national/)                 |
-| 省赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                         | [当前省赛结构文件](./structure/provincial/)               |
-| 硬件 PCB | [硬件 PCB 总文档](./hardware/README.md)                                                                                                                                                     | [当前 PCB 源文件](./hardware/boards/)                     |
-| Air 飞控 | [Air 最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)                                                                                                | [固定版本 Air](./CYT4BB7_Air/)                            |
-| 图像板   | [Image 最新仓库](https://github.com/ZhangStudyLife/CYT2BL3_Image/tree/national-2026)                                                                                                        | [固定版本 Image](./CYT2BL3_Image/)                        |
-| 上位机   | [上位机最新主文档](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)；[CarPlan 分支](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md) | [固定版本上位机](./BeaconImageAnalyzer/)                  |
-| 车端     | [Car_F 国赛分支](https://github.com/ZhangStudyLife/CYT4BB7_Car_F/tree/national-2026)；[Car 仓库](https://github.com/choumouing/CYT4bb7_Car/tree/national-2026) | [固定版本 Car](./CYT4bb7_Car/) / [Car_F](./CYT4BB7_Car_F/) |
+| 模块     | 最新版本                                                                                                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 国赛结构 | [当前国赛结构文件](./structure/national/)                                                                                                                                                   |
+| 省赛结构 | [当前省赛结构文件](./structure/provincial/)                                                                                                                                                 |
+| 硬件 PCB | [当前 PCB 源文件](./hardware/boards/)                                                                                                                                                       |
+| Air 飞控 | [Air 最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)                                                                                                |
+| 图像板   | [Image 最新仓库](https://github.com/ZhangStudyLife/CYT2BL3_Image/tree/national-2026)                                                                                                        |
+| 上位机   | [上位机最新主文档](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)；[CarPlan 分支](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md) |
+| 车端     | [Car_F 国赛分支](https://github.com/ZhangStudyLife/CYT4BB7_Car_F/tree/national-2026)；[Car 仓库](https://github.com/choumouing/CYT4bb7_Car/tree/national-2026)                               |
 
 Car 端的具体文档目前不是这套开源内容的主线，先把它作为完整工程入口保留。真正想理解“飞机为什么能让车跑起来”，建议先看 Air、硬件和结构，再回头看 Car。
 
