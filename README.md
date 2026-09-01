@@ -1,140 +1,140 @@
-# 第 21 届全国大学生智能汽车竞赛：飞跃雷区开源项目
+# �� 21 ��ȫ����ѧ������������������Ծ������Դ��Ŀ
 
-> 2026 年，杭电飞跃雷区三队参加第 21 届全国大学生智能汽车竞赛“飞跃雷区”组，获得全国总决赛冠军。这里是整套项目的母仓库，代码、PCB、结构件、调试工具和文档都从这里开始找
+> 2026 �꣬�����Ծ�������Ӳμӵ� 21 ��ȫ����ѧ������������������Ծ�������飬���ȫ���ܾ����ھ���������������Ŀ��ĸ�ֿ⣬���롢PCB���ṹ�������Թ��ߺ��ĵ��������￪ʼ��
 
-## 比赛规则前情提要
+## ��������ǰ����Ҫ
 
-- [**总规则**](https://blog.csdn.net/zhuoqingjoking97298/article/details/154598625)
-- [**雷区规则**](https://blog.csdn.net/zhuoqingjoking97298/article/details/154691546)
-- [**雷区的QA补充**](https://zhuoqing.blog.csdn.net/article/details/157686655)
-- [第二十一届全国大学生智能车竞赛全国总决赛（竞速组别）成绩与奖项](https://blog.csdn.net/zhuoqingjoking97298/article/details/164053403)
+- [**�ܹ���**](https://blog.csdn.net/zhuoqingjoking97298/article/details/154598625)
+- [**��������**](https://blog.csdn.net/zhuoqingjoking97298/article/details/154691546)
+- [**������QA����**](https://zhuoqing.blog.csdn.net/article/details/157686655)
+- [�ڶ�ʮһ��ȫ����ѧ�����ܳ�����ȫ���ܾ�����������𣩳ɼ��뽱��](https://blog.csdn.net/zhuoqingjoking97298/article/details/164053403)
 
-大致规则为 : 使用指定MCU进行手搓飞控 , 自制无人机和车模 , 使用不长于1.5米的供电线缆进行供电 , 只允许无人机安装摄像头 , 实现车模自动熄灭信标灯的操作 , 比拼灭掉同样的灯谁花费的时间更少
+���¹���Ϊ : ʹ��ָ��MCU�����ִ�ɿ� , �������˻��ͳ�ģ , ʹ�ò�����1.5�׵Ĺ������½��й��� , ֻ�������˻���װ����ͷ , ʵ�ֳ�ģ�Զ�Ϩ���ű�ƵĲ��� , ��ƴ���ͬ���ĵ�˭���ѵ�ʱ�����
 
-## 队伍成绩
-
-<p align="center">
-  <img src="image/README/1788055858022.png" width="78%" alt="第21届国赛飞跃雷区组成绩表 , 杭电飞跃雷区三队一等奖">
-</p>
-
-决赛因为图像问题很严重 , 没能发挥出正常的水平 , 其实前四名的排序就是纯运气。实验室里调试出来的最快速度可以达到26秒左右 , 预赛成绩是遥遥领先的 , 可以查看视频
-
-[【21届智能车杭电飞跃雷区三队预赛14.5s杀死比赛】](https://www.bilibili.com/video/BV1hkh36wECt/)
-
-## 获奖证书
+## ����ɼ�
 
 <p align="center">
-  <img src="image/README/1788056447349.jpg" width="42%" alt="全国总决赛飞跃雷区一等奖证书（第1名）">
-  <img src="image/README/1788056478348.jpg" width="42%" alt="分赛区飞跃雷区一等奖证书（第1名）">
+  <img src="image/README/1788055858022.png" width="78%" alt="��21�������Ծ������ɼ��� , �����Ծ��������һ�Ƚ�">
 </p>
 
-## 先看这里
+������Ϊͼ����������� , û�ܷ��ӳ�������ˮƽ , ��ʵǰ������������Ǵ�������ʵ��������Գ���������ٶȿ��Դﵽ26������ , Ԥ���ɼ���ңң���ȵ� , ���Բ鿴��Ƶ
 
-如果只想先了解我们做了什么，建议按这个顺序：
+[��21�����ܳ������Ծ��������Ԥ��14.5sɱ��������](https://www.bilibili.com/video/BV1hkh36wECt/)
 
-1. [【21届智能车杭电飞跃雷区三队预赛14.5s杀死比赛】](https://www.bilibili.com/video/BV1hkh36wECt/)
-2. [有些故事，适合留在最好的时候](https://www.bilibili.com/video/BV17L8J6fEYQ/)
-3. [国赛结构讲解视频](https://www.bilibili.com/video/BV1894o62Ej4/)
-4. [上位机调试路径规划和图像兜底](https://www.bilibili.com/video/BV1Rm4m6fEMv/)
-5. [Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
-6. 再根据下面的模块入口，跳到自己真正关心的部分。
+## ��֤��
 
-## 我们做的是什么
+<p align="center">
+  <img src="image/README/1788056447349.jpg" width="42%" alt="ȫ���ܾ�����Ծ����һ�Ƚ�֤�飨��1����">
+  <img src="image/README/1788056478348.jpg" width="42%" alt="��������Ծ����һ�Ƚ�֤�飨��1����">
+</p>
 
-这是一个空地协同的智能车项目：无人机在空中识别地面信标和车灯，把视觉结果、飞机姿态和高度等信息交给飞控；飞控经过相机模型、三摄融合和路径规划，计算车模应该行驶的方向和速度；车模再执行速度控制，并把实际速度回传给飞机。
+## �ȿ�����
 
-简单说就是：
+���ֻ�����˽���������ʲô�����鰴���˳��
+
+1. [��21�����ܳ������Ծ��������Ԥ��14.5sɱ��������](https://www.bilibili.com/video/BV1hkh36wECt/)
+2. [��Щ���£��ʺ�������õ�ʱ��](https://www.bilibili.com/video/BV17L8J6fEYQ/)
+3. [�����ṹ������Ƶ](https://www.bilibili.com/video/BV1894o62Ej4/)
+4. [��λ������·���滮��ͼ�񶵵�](https://www.bilibili.com/video/BV1Rm4m6fEMv/)
+5. [Air �ɿ��������ĵ�](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
+6. �ٸ��������ģ����ڣ������Լ��������ĵĲ��֡�
+
+## ����������ʲô
+
+����һ���յ�Эͬ�����ܳ���Ŀ�����˻��ڿ���ʶ������ű�ͳ��ƣ����Ӿ�������ɻ���̬�͸߶ȵ���Ϣ�����ɿأ��ɿؾ������ģ�͡������ںϺ�·���滮�����㳵ģӦ����ʻ�ķ�����ٶȣ���ģ��ִ���ٶȿ��ƣ�����ʵ���ٶȻش����ɻ���
+
+��˵���ǣ�
 
 ```text
-空中图像板识别信标 / 车灯
-        ↓ SPI
-CYT4BB7_Air：双核飞控、姿态高度、相机模型、CarPlan3
-        ↓ AirComm UART
-CYT4bb7_Car：麦轮控制、编码器、里程计和车模执行
+����ͼ���ʶ���ű� / ����
+        �� SPI
+CYT4BB7_Air��˫�˷ɿء���̬�߶ȡ����ģ�͡�CarPlan3
+        �� AirComm UART
+CYT4bb7_Car�����ֿ��ơ�����������̼ƺͳ�ģִ��
 ```
 
-## 我在这个项目遇到的难点
+## ���������Ŀ�������ѵ�
 
-1. 前期对于飞控了解不够多 , 电机选型、桨叶选型、对比众多开源飞控的区别 , 都花费了很多时间
-2. 硬件画板能力和迭代速度导致前期飞机结构非常非常差劲(前硬件队友就是摆子,四月份没画出有刷驱动,后面换了大一学弟,毕竟是学弟要求不能这么高了,但客观而言硬件拖慢了整体的进度,六月份才刚有第一版电调可用,包括前期的三摄方案也因为硬件问题推进了两个月没硬件供我调试)
-3. 高度传感器的选型研究了很久,寒假期间花费很多时间在气压计上面
-4. 光流的选型和融合 , 这个无人机的水平速度环从3月份调到7月份
-5. 多摄像头的摆放位置 , 前期摆放使用 3个摄像头互相夹角60°
-6. 队伍内没有专业的结构 , 导致结构设计每次都要迭代三四次才会初具人形,队友初次绘制的机架花费了800大洋,厚度打了8mm,跟坦克一样根本不可起飞
-7. 图像算法反馈的image_data可用性很低 ,导致路径算法一直在做兜底
+1. ǰ�ڶ��ڷɿ��˽ⲻ���� , ���ѡ�͡���Ҷѡ�͡��Ա��ڶ࿪Դ�ɿص����� , �������˺ܶ�ʱ��
+2. Ӳ�����������͵����ٶȵ���ǰ�ڷɻ��ṹ�ǳ��ǳ��(ǰӲ�����Ѿ��ǰ���,���·�û������ˢ����,���滻�˴�һѧ��,�Ͼ���ѧ��Ҫ������ô����,���͹۶���Ӳ������������Ľ���,���·ݲŸ��е�һ��������,����ǰ�ڵ����㷽��Ҳ��ΪӲ�������ƽ���������ûӲ�����ҵ���)
+3. �߶ȴ�������ѡ���о��˺ܾ�,�����ڼ仨�Ѻܶ�ʱ������ѹ������
+4. ������ѡ�ͺ��ں� , ������˻���ˮƽ�ٶȻ���3�·ݵ���7�·�
+5. ������ͷ�İڷ�λ�� , ǰ�ڰڷ�ʹ�� 3������ͷ����н�60��
+6. ������û��רҵ�Ľṹ , ���½ṹ���ÿ�ζ�Ҫ�������ĴβŻ��������,���ѳ��λ��ƵĻ��ܻ�����800����,��ȴ���8mm,��̹��һ�������������
+7. ͼ���㷨������image_data�����Ժܵ� ,����·���㷨һֱ��������
 
-## 忆往昔
+## ������
 
-从大一一开学做实验室考核任务接触智能车 , 到学长引荐打 NXP 平衡竞速组 , 再到这一届飞跃雷区 , 这一路的风和雨单独写成了一篇回忆录 :
+�Ӵ�һһ��ѧ��ʵ���ҿ�������Ӵ����ܳ� , ��ѧ�������� NXP ƽ�⾺���� , �ٵ���һ���Ծ���� , ��һ·�ķ���굥��д����һƪ����¼ :
 
-[忆往昔](./忆往昔.md)
+[������](./������.md)
 
-## 核心入口
+## �������
 
-总仓库固定的子模块版本和子仓库远端最新文档不是一回事，所以这里明确分成两列：
+�ֿܲ�̶�����ģ��汾���Ӳֿ�Զ�������ĵ�����һ���£�����������ȷ�ֳ����У�
 
-| 主题     | 子仓库 / 文档最新入口                                                                                                                                                                      | 当前总仓库固定版本                                       |
+| ����     | �Ӳֿ� / �ĵ��������                                                                                                                                                                      | ��ǰ�ֿܲ�̶��汾                                       |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
-| 国赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                         | [当前国赛结构文件](./structure/national/)                 |
-| 省赛结构 | [结构总文档](./structure/README.md)                                                                                                                                                         | [当前省赛结构文件](./structure/provincial/)               |
-| 硬件 PCB | [硬件 PCB 总文档](./hardware/README.md)                                                                                                                                                     | [当前 PCB 源文件](./hardware/boards/)                     |
-| Air 飞控 | [Air 最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)                                                                                                | [固定版本 Air](./CYT4BB7_Air/)                            |
-| 图像板   | [Image 最新仓库](https://github.com/ZhangStudyLife/CYT2BL3_Image/tree/national-2026)                                                                                                        | [固定版本 Image](./CYT2BL3_Image/)                        |
-| 上位机   | [上位机最新主文档](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)；[CarPlan 分支](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md) | [固定版本上位机](./BeaconImageAnalyzer/)                  |
-| 车端     | [Car_F 国赛分支](https://github.com/ZhangStudyLife/CYT4BB7_Car_F/tree/national-2026)；Car 仓库（choumouing/CYT4bb7_Car）暂未公开                                             | [固定版本 Car](./CYT4bb7_Car/) / [Car_F](./CYT4BB7_Car_F/) |
+| �����ṹ | [�ṹ���ĵ�](./structure/README.md)                                                                                                                                                         | [��ǰ�����ṹ�ļ�](./structure/national/)                 |
+| ʡ���ṹ | [�ṹ���ĵ�](./structure/README.md)                                                                                                                                                         | [��ǰʡ���ṹ�ļ�](./structure/provincial/)               |
+| Ӳ�� PCB | [Ӳ�� PCB ���ĵ�](./hardware/README.md)                                                                                                                                                     | [��ǰ PCB Դ�ļ�](./hardware/boards/)                     |
+| Air �ɿ� | [Air �������ĵ�](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)                                                                                                | [�̶��汾 Air](./CYT4BB7_Air/)                            |
+| ͼ���   | [Image ���²ֿ�](https://github.com/ZhangStudyLife/CYT2BL3_Image/tree/national-2026)                                                                                                        | [�̶��汾 Image](./CYT2BL3_Image/)                        |
+| ��λ��   | [��λ���������ĵ�](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)��[CarPlan ��֧](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md) | [�̶��汾��λ��](./BeaconImageAnalyzer/)                  |
+| ����     | [Car_F ������֧](https://github.com/ZhangStudyLife/CYT4BB7_Car_F/tree/national-2026)��Car �ֿ⣨choumouing/CYT4bb7_Car����δ����                                             | [�̶��汾 Car](./CYT4bb7_Car/) / [Car_F](./CYT4BB7_Car_F/) |
 
-Car 端的具体文档目前不是这套开源内容的主线，先把它作为完整工程入口保留。真正想理解“飞机为什么能让车跑起来”，建议先看 Air、硬件和结构，再回头看 Car。
+Car �˵ľ����ĵ�Ŀǰ�������׿�Դ���ݵ����ߣ��Ȱ�����Ϊ����������ڱ��������������⡰�ɻ�Ϊʲô���ó����������������ȿ� Air��Ӳ���ͽṹ���ٻ�ͷ�� Car��
 
-## 按目标阅读
+## ��Ŀ���Ķ�
 
-### 只想了解比赛方案
+### ֻ���˽��������
 
-先看本页的[整体方案](#我们做的是什么)，然后看[结构总文档](./structure/README.md)和[硬件 PCB](./hardware/README.md)。结构总文档会直接引流国赛/省赛视频和对应的 SolidWorks 文件，这条路线能先建立“最终拿去比赛的东西长什么样”的概念。
+�ȿ���ҳ��[���巽��](#����������ʲô)��Ȼ��[�ṹ���ĵ�](./structure/README.md)��[Ӳ�� PCB](./hardware/README.md)���ṹ���ĵ���ֱ����������/ʡ����Ƶ�Ͷ�Ӧ�� SolidWorks �ļ�������·�����Ƚ�����������ȥ�����Ķ�����ʲô�����ĸ��
 
-### 想理解无人机飞控
+### ���������˻��ɿ�
 
-进入 [Air 最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)，按“软件架构 -> IMU -> 高度 -> 遥控器/CRSF -> 通信”的顺序读。Air 文档会再跳到具体源码和实验记录。
+���� [Air �������ĵ�](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)�����������ܹ� -> IMU -> �߶� -> ң����/CRSF -> ͨ�š���˳�����Air �ĵ�������������Դ���ʵ���¼��
 
-### 想理解图像到路径规划
+### ������ͼ��·���滮
 
-进入 Air 的[相机模型标定](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/03-competition/camera-model-calibration.md)，再看 [CarPlan3 上位机调试流程](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/03-competition/car-plan3-debug-workflow.md)。这两篇会解释为什么不能只在像素域里看一条曲线，以及如何通过日志回放区分视觉、几何、规划和底盘问题。
+���� Air ��[���ģ�ͱ궨](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/03-competition/camera-model-calibration.md)���ٿ� [CarPlan3 ��λ����������](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/docs/03-competition/car-plan3-debug-workflow.md)������ƪ�����Ϊʲô����ֻ���������￴һ�����ߣ��Լ����ͨ����־�ط������Ӿ������Ρ��滮�͵������⡣
 
-### 想复现上位机调试
+### �븴����λ������
 
-先看[上位机调试视频](https://www.bilibili.com/video/BV1Rm4m6fEMv/)，再进入 [BeaconImageAnalyzer 最新主文档](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)。如果要看 CarPlan3 专用版本，进入它的 [`car_plan` 分支 README](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md)。
+�ȿ�[��λ��������Ƶ](https://www.bilibili.com/video/BV1Rm4m6fEMv/)���ٽ��� [BeaconImageAnalyzer �������ĵ�](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)�����Ҫ�� CarPlan3 ר�ð汾���������� [`car_plan` ��֧ README](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md)��
 
-## 仓库结构
+## �ֿ�ṹ
 
 ```text
 .
-├─ hardware/                  PCB 源文件、板卡照片和硬件迭代记录
-├─ structure/                 国赛、省赛结构件和结构说明
-├─ CYT4BB7_Air/               空中控制端代码和飞控文档
-├─ CYT2BL3_Image/             摄像头采集与图像识别代码
-├─ BeaconImageAnalyzer/       WiFi/JustFloat 接收、记录和回放工具
-├─ CYT4bb7_Car/               车端代码
-└─ CYT4BB7_Car_F/             另一套车端国赛工程
+���� hardware/                  PCB Դ�ļ����忨��Ƭ��Ӳ��������¼
+���� structure/                 ������ʡ���ṹ���ͽṹ˵��
+���� CYT4BB7_Air/               ���п��ƶ˴���ͷɿ��ĵ�
+���� CYT2BL3_Image/             ����ͷ�ɼ���ͼ��ʶ�����
+���� BeaconImageAnalyzer/       WiFi/JustFloat ���ա���¼�ͻطŹ���
+���� CYT4bb7_Car/               ���˴���
+���� CYT4BB7_Car_F/             ��һ�׳��˹�������
 ```
 
-`hardware/` 和 `structure/` 是母仓库自己的内容；Air、Image、Car 和上位机是独立子仓库。不要在 Air 里寻找 PCB 源文件，也不要把总仓库固定的子模块提交当成远端子仓库的最新版本。
+`hardware/` �� `structure/` ��ĸ�ֿ��Լ������ݣ�Air��Image��Car ����λ���Ƕ����Ӳֿ⡣��Ҫ�� Air ��Ѱ�� PCB Դ�ļ���Ҳ��Ҫ���ֿܲ�̶�����ģ���ύ����Զ���Ӳֿ�����°汾��
 
-## 克隆和版本关系
+## ��¡�Ͱ汾��ϵ
 
-首次下载当前完整工程：
+�״����ص�ǰ�������̣�
 
 ```bash
 git clone --branch national-2026 --depth 1 --recurse-submodules --shallow-submodules https://github.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield.git
 ```
 
-> 注意：Car 子模块的远端仓库（choumouing/CYT4bb7_Car）目前暂未公开，克隆时只有这一项会报错，总仓库本身和其他子模块不受影响；等仓库恢复公开后即可完整拉取。
+> ע�⣺Car ��ģ���Զ�˲ֿ⣨choumouing/CYT4bb7_Car��Ŀǰ��δ��������¡ʱֻ����һ��ᱨ�����ֿܲⱾ����������ģ�鲻��Ӱ�죻�Ȳֿ�ָ������󼴿�������ȡ��
 
-已经克隆后，同步总仓库记录的固定子模块版本：
+�Ѿ���¡��ͬ���ֿܲ��¼�Ĺ̶���ģ��汾��
 
 ```bash
 git pull --recurse-submodules
 git submodule update --init --recursive
 ```
 
-如果只是想看子仓库远端的最新内容，请使用上面“核心入口”里的 GitHub 最新入口，不要直接在本地执行 `git submodule update --remote` 后就认为它和总仓库已经匹配。主动更新子仓库后，必须检查接口兼容性，再决定是否提交新的子模块指针。
+���ֻ���뿴�Ӳֿ�Զ�˵��������ݣ���ʹ�����桰������ڡ���� GitHub ������ڣ���Ҫֱ���ڱ���ִ�� `git submodule update --remote` �����Ϊ�����ֿܲ��Ѿ�ƥ�䡣���������Ӳֿ�󣬱�����ӿڼ����ԣ��پ����Ƿ��ύ�µ���ģ��ָ�롣
 
-[Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md) · [硬件 PCB 总文档](./hardware/README.md) · [结构总文档](./structure/README.md)
+[Air �ɿ��������ĵ�](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md) �� [Ӳ�� PCB ���ĵ�](./hardware/README.md) �� [�ṹ���ĵ�](./structure/README.md)

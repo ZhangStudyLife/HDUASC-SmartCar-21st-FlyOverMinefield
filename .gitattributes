@@ -1,0 +1,21 @@
+# 文本文件统一：仓库与工作区均为 LF，防止 CRLF/LF 再次混杂
+* text=auto eol=lf
+
+# 二进制文件（不参与行尾/编码处理）
+*.a binary
+*.lib binary
+*.bin binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.7z binary
+*.SLDPRT binary
+*.SLDASM binary
+*.epro2 binary
+
+# 逐飞 SDK 中被 git 误判为二进制的历史文件，保持原样
+edd_int.h -text

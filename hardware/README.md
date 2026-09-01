@@ -1,30 +1,30 @@
-# ç¡¬ä»¶è®¾è®¡ï¼ˆHardwareï¼‰
+# Ó²¼şÉè¼Æ£¨Hardware£©
 
-> è½¦æœºååŒç³»ç•™å››æ—‹ç¿¼ Â· å…¨éƒ¨è‡ªç ”ç¡¬ä»¶ Â· ç¬¬ 21 å±Šå…¨å›½å¤§å­¦ç”Ÿæ™ºèƒ½æ±½è½¦ç«èµ›ã€Œé£è·ƒé›·åŒºã€ç»„
+> ³µ»úĞ­Í¬ÏµÁôËÄĞıÒí ¡¤ È«²¿×ÔÑĞÓ²¼ş ¡¤ µÚ 21 ½ìÈ«¹ú´óÑ§ÉúÖÇÄÜÆû³µ¾ºÈü¡¸·ÉÔ¾À×Çø¡¹×é
 
-> è¿™é‡Œçš„ PCB æºæ–‡ä»¶ã€æ¿å¡ç…§ç‰‡å’Œç¡¬ä»¶è¿­ä»£è®°å½•ç”±æ€»ä»“åº“ç»Ÿä¸€ç»´æŠ¤ã€‚Air å­ä»“åº“é‡Œçš„ç¡¬ä»¶è¯´æ˜åªè´Ÿè´£è·³è½¬åˆ°è¿™é‡Œï¼Œä¸åœ¨ä¸¤ä¸ªä»“åº“ä¹‹é—´å¤åˆ¶ä¸€ä»½ã€‚
+> ÕâÀïµÄ PCB Ô´ÎÄ¼ş¡¢°å¿¨ÕÕÆ¬ºÍÓ²¼şµü´ú¼ÇÂ¼ÓÉ×Ü²Ö¿âÍ³Ò»Î¬»¤¡£Air ×Ó²Ö¿âÀïµÄÓ²¼şËµÃ÷Ö»¸ºÔğÌø×ªµ½ÕâÀï£¬²»ÔÚÁ½¸ö²Ö¿âÖ®¼ä¸´ÖÆÒ»·İ¡£
 
-[è¿”å›æ€»ä»“åº“ README](../README.md) Â· [Air é£æ§æœ€æ–°æ€»æ–‡æ¡£](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
+[·µ»Ø×Ü²Ö¿â README](../README.md) ¡¤ [Air ·É¿Ø×îĞÂ×ÜÎÄµµ](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)
 
-> æ–‡æ¡£çŠ¶æ€ï¼šæŒç»­è¿­ä»£ä¸­ã€‚ä¸‹è¡¨ä¸­çš„è¿­ä»£è®°å½•å¯ç›´æ¥åœ¨çº¿é˜…è¯»ï¼ŒPCB æºæ–‡ä»¶å¯ç›´æ¥ä¸‹è½½ã€‚
+> ÎÄµµ×´Ì¬£º³ÖĞøµü´úÖĞ¡£ÏÂ±íÖĞµÄµü´ú¼ÇÂ¼¿ÉÖ±½ÓÔÚÏßÔÄ¶Á£¬PCB Ô´ÎÄ¼ş¿ÉÖ±½ÓÏÂÔØ¡£
 
-## æ¿å¡ç´¢å¼•
+## °å¿¨Ë÷Òı
 
-| æ¿å¡ | PCB æºæ–‡ä»¶ | è¿­ä»£è®°å½• | æ ¸å¿ƒèŠ¯ç‰‡ |
+| °å¿¨ | PCB Ô´ÎÄ¼ş | µü´ú¼ÇÂ¼ | ºËĞÄĞ¾Æ¬ |
 | --- | --- | --- | --- |
-| é£æ§æ¿ | [ä¸‹è½½PCBæºæ–‡ä»¶ï¼ˆå›½èµ›è¿­ä»£ï¼‰](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/ProPrj_%E9%A3%9E%E6%8E%A7%E5%9B%BD%E8%B5%9B%E8%BF%AD%E4%BB%A3_2026-08-15.epro2)<br>[ä¸‹è½½PCBæºæ–‡ä»¶ï¼ˆæ ¸å¿ƒæ¿ ver1.1ï¼‰](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/%E6%A0%B8%E5%BF%83%E6%9D%BF%E9%A3%9E%E6%8E%A7ver1.1.epro2)<br>[ä¸‹è½½PCBæºæ–‡ä»¶ï¼ˆé£æ§æ¿ ver1.0ï¼‰](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/%E9%A3%9E%E6%8E%A7%E6%9D%BFver1.0.epro2)<br>[ä¸‹è½½PCBæºæ–‡ä»¶ï¼ˆé£æ§è£¸ç‰‡ ver2.0ï¼‰](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/%E9%A3%9E%E6%8E%A7%E8%A3%B8%E7%89%87ver2.0.epro2) | [æŸ¥çœ‹è¿­ä»£è®°å½•](docs/CYT4bb7_Air.md) | CYT4BB7 |
-| è½¦æ§æ¿ | [ä¸‹è½½PCBæºæ–‡ä»¶](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4bb7_Car/source/ProPrj_%E8%BD%A6%E6%9D%BF%E8%BF%AD%E4%BB%A3_2026-08-15.epro2) | [æŸ¥çœ‹è¿­ä»£è®°å½•](docs/CYT4bb7_Car.md) | CYT4BB7 |
-| åŒ CYT2BL3 å›¾åƒæ¿ | [ä¸‹è½½PCBæºæ–‡ä»¶](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT2BL3_Image/source/ProPrj_%E5%9B%BE%E5%83%8F%E6%9D%BF%E5%9B%BD%E8%B5%9B%E8%BF%AD%E4%BB%A3_2026-08-15.epro2) | [æŸ¥çœ‹è¿­ä»£è®°å½•](docs/CYT2BL3_Image.md) | CYT2BL3 |
-| æ— åˆ·ç”µè°ƒ | [ä¸‹è½½PCBæºæ–‡ä»¶](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/BrushlessESC/source/ProPrj_ai8051%E7%94%B5%E8%B0%83_2026-08-15.epro2) | [æŸ¥çœ‹è¿­ä»£è®°å½•](docs/BrushlessESC.md) | AI8051 |
-| åŒè·¯æœ‰åˆ·é©±åŠ¨ | [ä¸‹è½½PCBæºæ–‡ä»¶](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/BrushedDriver/source/DRV8701_%E6%9C%89%E5%88%B7%E9%A9%B1%E5%8A%A8.epro2) | [æŸ¥çœ‹è¿­ä»£è®°å½•](docs/BrushedDriver.md) | DRV8701 |
-| ç¯æ¿ | [ä¸‹è½½PCBæºæ–‡ä»¶](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/LightBoard/source/%E9%93%9D%E5%9F%BA%E6%9D%BF%E7%BA%A2%E5%A4%96%E7%81%AF%E6%9D%BF.epro2) | [æŸ¥çœ‹è¿­ä»£è®°å½•](docs/LightBoard.md) | â€” |
-| FPC é™€èºä»ª | [ä¸‹è½½PCBæºæ–‡ä»¶](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/FPC-Gyro/source/ICM42688P_FPC.epro2) | [æŸ¥çœ‹è¿­ä»£è®°å½•](docs/FPC-Gyro.md) | ICM42688P |
+| ·É¿Ø°å | [ÏÂÔØPCBÔ´ÎÄ¼ş£¨¹úÈüµü´ú£©](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/ProPrj_%E9%A3%9E%E6%8E%A7%E5%9B%BD%E8%B5%9B%E8%BF%AD%E4%BB%A3_2026-08-15.epro2)<br>[ÏÂÔØPCBÔ´ÎÄ¼ş£¨ºËĞÄ°å ver1.1£©](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/%E6%A0%B8%E5%BF%83%E6%9D%BF%E9%A3%9E%E6%8E%A7ver1.1.epro2)<br>[ÏÂÔØPCBÔ´ÎÄ¼ş£¨·É¿Ø°å ver1.0£©](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/%E9%A3%9E%E6%8E%A7%E6%9D%BFver1.0.epro2)<br>[ÏÂÔØPCBÔ´ÎÄ¼ş£¨·É¿ØÂãÆ¬ ver2.0£©](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/%E9%A3%9E%E6%8E%A7%E8%A3%B8%E7%89%87ver2.0.epro2) | [²é¿´µü´ú¼ÇÂ¼](docs/CYT4bb7_Air.md) | CYT4BB7 |
+| ³µ¿Ø°å | [ÏÂÔØPCBÔ´ÎÄ¼ş](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4bb7_Car/source/ProPrj_%E8%BD%A6%E6%9D%BF%E8%BF%AD%E4%BB%A3_2026-08-15.epro2) | [²é¿´µü´ú¼ÇÂ¼](docs/CYT4bb7_Car.md) | CYT4BB7 |
+| Ë« CYT2BL3 Í¼Ïñ°å | [ÏÂÔØPCBÔ´ÎÄ¼ş](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT2BL3_Image/source/ProPrj_%E5%9B%BE%E5%83%8F%E6%9D%BF%E5%9B%BD%E8%B5%9B%E8%BF%AD%E4%BB%A3_2026-08-15.epro2) | [²é¿´µü´ú¼ÇÂ¼](docs/CYT2BL3_Image.md) | CYT2BL3 |
+| ÎŞË¢µçµ÷ | [ÏÂÔØPCBÔ´ÎÄ¼ş](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/BrushlessESC/source/ProPrj_ai8051%E7%94%B5%E8%B0%83_2026-08-15.epro2) | [²é¿´µü´ú¼ÇÂ¼](docs/BrushlessESC.md) | AI8051 |
+| Ë«Â·ÓĞË¢Çı¶¯ | [ÏÂÔØPCBÔ´ÎÄ¼ş](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/BrushedDriver/source/DRV8701_%E6%9C%89%E5%88%B7%E9%A9%B1%E5%8A%A8.epro2) | [²é¿´µü´ú¼ÇÂ¼](docs/BrushedDriver.md) | DRV8701 |
+| µÆ°å | [ÏÂÔØPCBÔ´ÎÄ¼ş](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/LightBoard/source/%E9%93%9D%E5%9F%BA%E6%9D%BF%E7%BA%A2%E5%A4%96%E7%81%AF%E6%9D%BF.epro2) | [²é¿´µü´ú¼ÇÂ¼](docs/LightBoard.md) | ¡ª |
+| FPC ÍÓÂİÒÇ | [ÏÂÔØPCBÔ´ÎÄ¼ş](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/FPC-Gyro/source/ICM42688P_FPC.epro2) | [²é¿´µü´ú¼ÇÂ¼](docs/FPC-Gyro.md) | ICM42688P |
 
-## å½“å‰è¯´æ˜
+## µ±Ç°ËµÃ÷
 
-- è¿­ä»£è®°å½•ä½äº [`docs/`](docs/) ç›®å½•ï¼Œå¯åœ¨ GitHub é¡µé¢ç›´æ¥æ‰“å¼€é˜…è¯»ã€‚
-- PCB å·¥ç¨‹æ–‡ä»¶ä½äº [`boards/`](boards/) ç›®å½•ï¼Œå„æ¿å¡çš„å›¾ç‰‡æ”¾åœ¨å¯¹åº”æ¿å¡çš„ `images/` ç›®å½•ã€‚
-- è¡¨æ ¼ä¸­çš„â€œä¸‹è½½PCBæºæ–‡ä»¶â€é“¾æ¥æŒ‡å‘ä»“åº“ `national-2026` åˆ†æ”¯ä¸­çš„ `.epro2` æ–‡ä»¶ï¼Œç‚¹å‡»å³å¯ä¸‹è½½ã€‚
-- å½“å‰ä»“åº“å·²æäº¤çš„ PCB æºæ–‡ä»¶å‡ä¸º `.epro2` å·¥ç¨‹æ–‡ä»¶ï¼›æš‚æœªæä¾›åŸç†å›¾ PDF æˆ– Gerber æ–‡ä»¶ã€‚
-- å·²è¡¥å……åŒè·¯æœ‰åˆ·é©±åŠ¨ï¼ˆDRV8701ï¼‰ã€é“åŸºæ¿çº¢å¤–ç¯æ¿å’Œ ICM42688P FPC é™€èºä»ªçš„ PCB æºæ–‡ä»¶ï¼Œåˆ†åˆ«å½’æ¡£åœ¨ `boards/BrushedDriver/source/`ã€`boards/LightBoard/source/` å’Œ `boards/FPC-Gyro/source/`ï¼Œç‚¹å‡»è¡¨æ ¼ä¸­çš„â€œä¸‹è½½PCBæºæ–‡ä»¶â€å³å¯ä¸‹è½½ã€‚
-- é£æ§æ¿è¿­ä»£è®°å½•æ‰€éœ€å›¾ç‰‡ä½äº [`boards/CYT4BB7_Air/images/`](boards/CYT4BB7_Air/images/)ã€‚
+- µü´ú¼ÇÂ¼Î»ÓÚ [`docs/`](docs/) Ä¿Â¼£¬¿ÉÔÚ GitHub Ò³ÃæÖ±½Ó´ò¿ªÔÄ¶Á¡£
+- PCB ¹¤³ÌÎÄ¼şÎ»ÓÚ [`boards/`](boards/) Ä¿Â¼£¬¸÷°å¿¨µÄÍ¼Æ¬·ÅÔÚ¶ÔÓ¦°å¿¨µÄ `images/` Ä¿Â¼¡£
+- ±í¸ñÖĞµÄ¡°ÏÂÔØPCBÔ´ÎÄ¼ş¡±Á´½ÓÖ¸Ïò²Ö¿â `national-2026` ·ÖÖ§ÖĞµÄ `.epro2` ÎÄ¼ş£¬µã»÷¼´¿ÉÏÂÔØ¡£
+- µ±Ç°²Ö¿âÒÑÌá½»µÄ PCB Ô´ÎÄ¼ş¾ùÎª `.epro2` ¹¤³ÌÎÄ¼ş£»ÔİÎ´Ìá¹©Ô­ÀíÍ¼ PDF »ò Gerber ÎÄ¼ş¡£
+- ÒÑ²¹³äË«Â·ÓĞË¢Çı¶¯£¨DRV8701£©¡¢ÂÁ»ù°åºìÍâµÆ°åºÍ ICM42688P FPC ÍÓÂİÒÇµÄ PCB Ô´ÎÄ¼ş£¬·Ö±ğ¹éµµÔÚ `boards/BrushedDriver/source/`¡¢`boards/LightBoard/source/` ºÍ `boards/FPC-Gyro/source/`£¬µã»÷±í¸ñÖĞµÄ¡°ÏÂÔØPCBÔ´ÎÄ¼ş¡±¼´¿ÉÏÂÔØ¡£
+- ·É¿Ø°åµü´ú¼ÇÂ¼ËùĞèÍ¼Æ¬Î»ÓÚ [`boards/CYT4BB7_Air/images/`](boards/CYT4BB7_Air/images/)¡£
