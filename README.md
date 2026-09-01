@@ -120,26 +120,17 @@ Car 端的具体文档目前不是这套开源内容的主线，先把它作为完整工程入口保留。真正想理
 
 ## 克隆和版本关系
 
-首次下载当前完整工程：
+直接浅克隆当前完整工程（包括所有子仓库）：
 
 ```bash
-git clone --branch national-2026 --depth 1 --recurse-submodules --shallow-submodules https://github.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield.git
+git clone --branch national-2026 --single-branch --depth 1 --recurse-submodules --shallow-submodules https://github.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield.git
 ```
 
-> 注意：Car 子仓库现已公开。如果只需要当前版本，建议单独进行浅克隆：
+该命令会同时浅克隆总仓库和全部子仓库，并检出总仓库记录的固定子模块版本。其中，`--recurse-submodules` 用于一并初始化所有子仓库，`--shallow-submodules` 用于让子仓库也只获取浅层历史。
 
-```bash
-git clone --branch national-2026 --depth 1 --single-branch https://github.com/choumouing/CYT4bb7_Car.git
-```
+由于 Car 子仓库历史提交较多，且前期提交包含了过多的飞行日志，完整克隆需要下载较多历史数据，速度较慢，因此建议使用上述浅克隆命令。
 
-> 由于该仓库历史提交较多，且前期提交包含了过多的飞行日志，完整克隆需要下载较多历史数据，速度较慢。
-
-已经克隆后，同步总仓库记录的固定子模块版本：
-
-```bash
-git pull --recurse-submodules
-git submodule update --init --recursive
-```
+如果需要各子仓库的远端最新提交，而不是总仓库记录的固定版本，请先确认接口兼容性，再单独更新相应子仓库。
 
 如果只是想看子仓库远端的最新内容，请使用上面“核心入口”里的 GitHub 最新入口，不要直接在本地执行 `git submodule update --remote` 后就认为它和总仓库已经匹配。主动更新子仓库后，必须检查接口兼容性，再决定是否提交新的子模块指针。
 
