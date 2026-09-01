@@ -22,6 +22,6 @@ structure/
 - [省赛飞机结构文件](provincial/air/)
 - [省赛车模结构文件](provincial/car/)
 
-具体结构细节以视频和 `.SLDPRT` 文件为准。文件名如果暂时不够直观，后续直接在这里补充索引，不再新增模块级 README。
+具体结构细节以视频和 `.SLDPRT` 文件为准。文件内容较直观，本文档不再重复展开模块级细节。
 
 [返回总仓库 README](../README.md)
