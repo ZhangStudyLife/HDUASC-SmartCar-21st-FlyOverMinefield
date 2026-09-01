@@ -81,7 +81,7 @@ CYT4bb7_Car：麦轮控制、编码器、里程计和车模执行
 | Air 飞控 | [Air 最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md)                                                                                                | [固定版本 Air](./CYT4BB7_Air/)                            |
 | 图像板   | [Image 最新仓库](https://github.com/ZhangStudyLife/CYT2BL3_Image/tree/national-2026)                                                                                                        | [固定版本 Image](./CYT2BL3_Image/)                        |
 | 上位机   | [上位机最新主文档](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/main/README.md)；[CarPlan 分支](https://github.com/ZhangStudyLife/BeaconImageAnalyzer/blob/car_plan/README.md) | [固定版本上位机](./BeaconImageAnalyzer/)                  |
-| 车端     | [Car_F 国赛分支](https://github.com/ZhangStudyLife/CYT4BB7_Car_F/tree/national-2026)；Car 仓库（choumouing/CYT4bb7_Car）暂未公开                                             | [固定版本 Car](./CYT4bb7_Car/) / [Car_F](./CYT4BB7_Car_F/) |
+| 车端     | [Car_F 国赛分支](https://github.com/ZhangStudyLife/CYT4BB7_Car_F/tree/national-2026)；[Car 仓库](https://github.com/choumouing/CYT4bb7_Car/tree/national-2026) | [固定版本 Car](./CYT4bb7_Car/) / [Car_F](./CYT4BB7_Car_F/) |
 
 Car 端的具体文档目前不是这套开源内容的主线，先把它作为完整工程入口保留。真正想理解“飞机为什么能让车跑起来”，建议先看 Air、硬件和结构，再回头看 Car。
 
@@ -126,7 +126,13 @@ Car 端的具体文档目前不是这套开源内容的主线，先把它作为完整工程入口保留。真正想理
 git clone --branch national-2026 --depth 1 --recurse-submodules --shallow-submodules https://github.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield.git
 ```
 
-> 注意：Car 子模块的远端仓库（choumouing/CYT4bb7_Car）目前暂未公开，克隆时只有这一项会报错，总仓库本身和其他子模块不受影响；等仓库恢复公开后即可完整拉取。
+> 注意：Car 子仓库现已公开。如果只需要当前版本，建议单独进行浅克隆：
+
+```bash
+git clone --branch national-2026 --depth 1 --single-branch https://github.com/choumouing/CYT4bb7_Car.git
+```
+
+> 由于该仓库历史提交较多，且前期提交包含了过多的飞行日志，完整克隆需要下载较多历史数据，速度较慢。
 
 已经克隆后，同步总仓库记录的固定子模块版本：
 
@@ -138,3 +144,11 @@ git submodule update --init --recursive
 如果只是想看子仓库远端的最新内容，请使用上面“核心入口”里的 GitHub 最新入口，不要直接在本地执行 `git submodule update --remote` 后就认为它和总仓库已经匹配。主动更新子仓库后，必须检查接口兼容性，再决定是否提交新的子模块指针。
 
 [Air 飞控最新总文档](https://github.com/ZhangStudyLife/CYT4BB7_Air/blob/national-2026/README.md) · [硬件 PCB 总文档](./hardware/README.md) · [结构总文档](./structure/README.md)
+
+## 许可与署名要求
+
+商业使用本仓库文档时，请保留并正确标注作者署名，遵守 CC BY 4.0 的署名要求。
+
+使用、修改或传播本仓库的文档或代码时，不得以任何方式暗示作者、作者所在学校或相关竞赛成绩对你的产品、服务或宣传提供赞助、认可或背书。尤其不得利用作者姓名、学校名称或“全国冠军”等表述，为在闲鱼等平台销售的代码、文档或相关服务进行宣传或背书。
+
+以上说明旨在明确署名与非背书要求，不改变 CC BY 4.0 或 GPL v3.0 允许的使用、修改、传播和商业利用范围。
