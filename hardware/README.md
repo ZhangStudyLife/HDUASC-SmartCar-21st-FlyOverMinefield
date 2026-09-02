@@ -6,7 +6,7 @@
 
 | 板卡              | 国赛版源文件                                                                  | 迭代记录                         | 核心芯片 |
 | ----------------- | ----------------------------------------------------------------------------- | -------------------------------- | -------- |
-| 飞控板            | [直接下载 PCB 源文件](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/CYT4BB7_%E9%A3%9E%E6%8E%A7%E6%9D%BF.epro2)         | [迭代记录](docs/CYT4BB7_Air.md)   |          |
+| 飞控板            | [直接下载 PCB 源文件](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4BB7_Air/source/CYT4BB7_%E9%A3%9E%E6%8E%A7%E6%9D%BF.epro2)         | [迭代记录](docs/CYT4bb7_Air.md)   |          |
 | 车控板            | [直接下载 PCB 源文件](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT4bb7_Car/source/CYT4BB7_%E8%BD%A6%E6%8E%A7%E6%9D%BF.epro2)         | [迭代记录](docs/CYT4bb7_Car.md)   |          |
 | 双 CYT2BL3 图像板 | [直接下载 PCB 源文件](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/CYT2BL3_Image/source/CYT2BL3_%E5%9B%BE%E5%83%8F%E6%9D%BF.epro2)       | [迭代记录](docs/CYT2BL3_Image.md) |          |
 | 无刷电调          | [直接下载 PCB 源文件](https://raw.githubusercontent.com/ZhangStudyLife/HDUASC-SmartCar-21st-FlyOverMinefield/national-2026/hardware/boards/BrushlessESC/source/AI8051U_%E6%97%A0%E5%88%B7%E7%94%B5%E8%B0%83.epro2)    | [迭代记录](docs/BrushlessESC.md)  |          |
